@@ -75,7 +75,11 @@ class NERDADataSetReader():
             warnings.warn(msg)
         tokens = tokens[:self.max_len - 2] 
         target_tags = target_tags[:self.max_len - 2]
-        offsets = offsets[:self.max_len - 2]
+        
+        #### RIOW
+        #offsets = offsets[:self.max_len - 2]
+        offsets = offsets[:self.max_len]
+        #### RIOWRIOW
 
         # encode tokens for BERT
         input_ids = self.transformer_tokenizer.encode(tokens)
